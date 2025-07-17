@@ -1,0 +1,8 @@
+for especies in 16S_*.fasta; do
+    cat $especies >> 16S_concat.fasta
+done
+
+for especies in 16S_*.txt; do
+    cat $especies >> 16S_concat.fasta
+done
+

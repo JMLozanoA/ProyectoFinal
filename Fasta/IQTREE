@@ -1,0 +1,4 @@
+#sed 's/^>/>/; s/ /_/g' muscle_16S > muscle_16S_nospaces
+
+
+ iqtree2 -s "muscle_16S_nospaces" -m MFP -bb 1000 -nt AUTO

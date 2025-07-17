@@ -1,0 +1,2 @@
+sed 's/^>/>/; s/ /_/g' muscle_16S > muscle_16S_nospaces
+

@@ -1,0 +1,28 @@
+#Crear un directorio para las secuencias fasta
+mkdir -p Fasta
+
+mitogen=("12S" "16S")
+organisms=("Pristimantis_labiosus" "Pristimantis_crenunguis" "Pristimantis_chocoensis" "Pristimantis_actites" "Pristimantis_lanthanites" )
+for mito in "${mitogen[@]}"
+do
+for org in "${organisms[@]}"
+
+
+do
+
+        query="$mito AND $org"
+
+
+           /u/scratch/d/dechavez/Bioinformatica-PUCE/MastBio/edirect/esearch -db nuccore -query "$query" | \
+        /u/scratch/d/dechavez/Bioinformatica-PUCE/MastBio/edirect/efetch -format fasta > "Fasta/${mito}_${org}.fasta"
+
+if [ ! -s "Fasta/${mito}_${org}.fasta" ]; then
+            echo "Advertencia: El archivo Fasta/${mito}_${org}.fasta está vacío." >> error.log
+        fi
+
+
+
+done
+done
+
+
